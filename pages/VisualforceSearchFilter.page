@@ -1,0 +1,18 @@
+<apex:page Controller="GetContactsController">    
+    <apex:form>        
+        <apex:pageBlock title="Contacts Datatable"> 
+            <apex:inputtext value="{!contactSearch}" html-placeholder="Enter name for search"/>
+            <apex:commandButton onclick="{!contacts}" value="Search" style="margin-left:20px;"/>       
+        </apex:pageBlock>     
+        <apex:pageBlock title="Contacts List" id ="contacts_list">
+            <apex:pageBlockTable value="{!contacts}" var="listContact"> 
+                <apex:column value="{!listContact.FirstName}"/>
+                <apex:column value="{!listContact.LastName}"/>
+                <apex:column value="{!listContact.Email}"/>
+                <apex:column value="{!listContact.AccountId}"/>
+                <apex:column value="{!listContact.MobilePhone}"/>           
+                <apex:column value="{!listContact.CreatedDate}"/>           
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
